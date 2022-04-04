@@ -6,7 +6,7 @@
 /*   By: kangkim <kangkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 16:21:45 by kangkim           #+#    #+#             */
-/*   Updated: 2022/04/02 23:39:10 by kangkim          ###   ########.fr       */
+/*   Updated: 2022/04/04 16:11:51 by kangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ FragTrap::FragTrap(void) {
   hit_points_ = kHitPoints;
   energy_points_ = kEnergyPoints;
   attack_damage_ = kAttackDamage;
+  max_hit_points_ = kHitPoints;
 }
 
 FragTrap::FragTrap(const std::string &name)
@@ -32,6 +33,7 @@ FragTrap::FragTrap(const std::string &name)
   hit_points_ = kHitPoints;
   energy_points_ = kEnergyPoints;
   attack_damage_ = kAttackDamage;
+  max_hit_points_ = kHitPoints;
 }
 
 FragTrap::FragTrap(const FragTrap &fragtrap) {
@@ -64,47 +66,6 @@ void FragTrap::attack(const std::string &target) {
               << std::endl;
     energy_points_--;
   }
-}
-
-void FragTrap::takeDamage(unsigned int amount)
-{
-  if (hit_points_ <= amount || hit_points_ == 0) {
-    std::cout << "[ " << kRobotType << " ] "
-              << name_ << "'s hit point is 0." << std::endl;
-    hit_points_ = 0;
-  }
-  else {
-    std::cout << "[ " << kRobotType << " ] "
-              << name_ << " take damage " << amount << std::endl;
-    hit_points_ -= amount;
-  }
-}
-
-void FragTrap::beRepaired(unsigned int amount)
-{
-  if (hit_points_ == 0 || energy_points_ == 0) {
-    std::cout << "[ " << kRobotType << " ] "
-              << name_ << " can't do anything." << std::endl;
-    return;
-  }
-  else if (hit_points_ == kMaxHitPoints) {
-    std::cout << "[ " << kRobotType << " ] "
-              << name_ << "'s hit point is full." << std::endl;
-    return;
-  }
-  else if (hit_points_ + amount > kMaxHitPoints) {
-    hit_points_ = kMaxHitPoints;
-    std::cout << "[ " << kRobotType << " ] "
-              << "Max hit points is " << kMaxHitPoints
-              << ". You are already full." << std::endl;
-  }
-  else {
-    hit_points_ += amount;
-    std::cout << "[ " << kRobotType << " ] "
-              << name_ << " gets " << amount
-              << " hit points back. Total : " << hit_points_ << std::endl;
-  }
-  energy_points_--;
 }
 
 void FragTrap::highFivesGuys(void) {

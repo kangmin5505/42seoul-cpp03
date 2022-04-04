@@ -6,7 +6,7 @@
 /*   By: kangkim <kangkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 16:06:50 by kangkim           #+#    #+#             */
-/*   Updated: 2022/04/02 20:38:17 by kangkim          ###   ########.fr       */
+/*   Updated: 2022/04/04 16:39:28 by kangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,14 @@ public:
   FragTrap &operator=(const FragTrap &fragtrap);
 
   void attack(const std::string &target);
-  void takeDamage(unsigned int amount);
-  void beRepaired(unsigned int amount);
 
   void highFivesGuys(void);
 
 private:
+  static const std::string kRobotType;
   static const unsigned int kHitPoints = 100;
   static const unsigned int kEnergyPoints = 100;
   static const unsigned int kAttackDamage = 30;
-  static const unsigned int kMaxHitPoints = 100;
-  static const std::string kRobotType;
 };
 
 #endif

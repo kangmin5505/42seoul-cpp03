@@ -6,7 +6,7 @@
 /*   By: kangkim <kangkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 22:19:56 by kangkim           #+#    #+#             */
-/*   Updated: 2022/04/02 18:49:24 by kangkim          ###   ########.fr       */
+/*   Updated: 2022/04/04 16:02:49 by kangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ const std::string ClapTrap::kRobotType = "ClapTrap";
 
 ClapTrap::ClapTrap(void)
   : name_(""), hit_points_(kHitPoints), 
-  energy_points_(kEnergyPoints), attack_damage_(kAttackDamage)
+  energy_points_(kEnergyPoints), attack_damage_(kAttackDamage),
+  max_hit_points_(kHitPoints)
 {
   std::cout << "[ " << kRobotType << " ] "
             << "Default constructor is called." << std::endl;
@@ -26,7 +27,8 @@ ClapTrap::ClapTrap(void)
 
 ClapTrap::ClapTrap(const std::string &name)
   : name_(name), hit_points_(kHitPoints), 
-  energy_points_(kEnergyPoints), attack_damage_(kAttackDamage)
+  energy_points_(kEnergyPoints), attack_damage_(kAttackDamage),
+  max_hit_points_(kHitPoints)
 {
   std::cout << "[ " << kRobotType << " ] "
             << "Constructor with name is called." << std::endl;
@@ -92,15 +94,15 @@ void ClapTrap::beRepaired(unsigned int amount)
               << name_ << " can't do anything." << std::endl;
     return;
   }
-  else if (hit_points_ == kMaxHitPoints) {
+  else if (hit_points_ == max_hit_points_) {
     std::cout << "[ " << kRobotType << " ] "
               << name_ << "'s hit point is full." << std::endl;
     return;
   }
-  else if (hit_points_ + amount > kMaxHitPoints) {
-    hit_points_ = kMaxHitPoints;
+  else if (hit_points_ + amount > max_hit_points_) {
+    hit_points_ = max_hit_points_;
     std::cout << "[ " << kRobotType << " ] "
-              << "Max hit points is " << kMaxHitPoints
+              << "Max hit points is " << max_hit_points_
               << ". You are already full." << std::endl;
   }
   else {

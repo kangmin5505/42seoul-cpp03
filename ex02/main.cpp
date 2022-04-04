@@ -6,7 +6,7 @@
 /*   By: kangkim <kangkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 00:06:21 by kangkim           #+#    #+#             */
-/*   Updated: 2022/04/02 20:42:48 by kangkim          ###   ########.fr       */
+/*   Updated: 2022/04/04 16:40:49 by kangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ int main(void) {
   FragTrap robot1("Frag");
   FragTrap robot2("Trap");
 
-  for (int i = 0; i < 50; i++) {
+  for (int i = 0; i < 100; i++) {
     robot1.attack("Trap");
   }
   robot1.attack("Trap");
   std::cout << std::endl;
   std::cout << "==============================================" << std::endl;
 
-  for (int i = 0; i < 50; i++) {
+  for (int i = 0; i < 100; i++) {
     robot2.takeDamage(1);
     robot2.beRepaired(1);
   }

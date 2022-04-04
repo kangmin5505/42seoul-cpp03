@@ -6,7 +6,7 @@
 /*   By: kangkim <kangkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 16:06:50 by kangkim           #+#    #+#             */
-/*   Updated: 2022/04/02 21:54:49 by kangkim          ###   ########.fr       */
+/*   Updated: 2022/04/04 16:24:54 by kangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ public:
   DiamondTrap &operator=(const DiamondTrap &diamondtrap);
 
   void attack(const std::string &target);
-  void takeDamage(unsigned int amount);
-  void beRepaired(unsigned int amount);
 
   void whoAmI(void);
 

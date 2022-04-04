@@ -6,7 +6,7 @@
 /*   By: kangkim <kangkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 22:10:58 by kangkim           #+#    #+#             */
-/*   Updated: 2022/04/02 19:47:58 by kangkim          ###   ########.fr       */
+/*   Updated: 2022/04/04 17:26:47 by kangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ protected:
   unsigned int hit_points_;
   unsigned int energy_points_;
   unsigned int attack_damage_;
+  unsigned int max_hit_points_;
 
 private:
   static const unsigned int kHitPoints = 10;
   static const unsigned int kEnergyPoints = 10;
   static const unsigned int kAttackDamage = 0;
-  static const unsigned int kMaxHitPoints = 10;
   static const std::string kRobotType;
 };
 

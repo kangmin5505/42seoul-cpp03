@@ -6,7 +6,7 @@
 #    By: kangkim <kangkim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 10:17:59 by kangkim           #+#    #+#              #
-#    Updated: 2022/03/31 10:30:06 by kangkim          ###   ########.fr        #
+#    Updated: 2022/04/04 16:39:48 by kangkim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ debug : re
 $(NAME) : $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-%.o : %.cpp
+%.o : %.cpp %.hpp
 	$(CXX) $(CXXFLAGS) -c $<
 
 clean :

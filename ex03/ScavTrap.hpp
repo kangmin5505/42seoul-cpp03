@@ -6,7 +6,7 @@
 /*   By: kangkim <kangkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 16:06:50 by kangkim           #+#    #+#             */
-/*   Updated: 2022/04/02 21:50:12 by kangkim          ###   ########.fr       */
+/*   Updated: 2022/04/04 17:27:10 by kangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ public:
   ScavTrap &operator=(const ScavTrap &scavtrap);
 
   void attack(const std::string &target);
-  void takeDamage(unsigned int amount);
-  void beRepaired(unsigned int amount);
 
   void guardGate(void);
 
@@ -35,7 +33,6 @@ protected:
   static const unsigned int kHitPoints = 100;
   static const unsigned int kEnergyPoints = 50;
   static const unsigned int kAttackDamage = 20;
-  static const unsigned int kMaxHitPoints = 100;
 
 private:
   static const std::string kRobotType;
